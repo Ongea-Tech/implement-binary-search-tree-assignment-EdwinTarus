@@ -30,7 +30,7 @@ class BinarySearchTree:
     def search(self, root, value):
         """Search for a value in the BST. Return True if found, else False."""
         if root is None:
-                return False
+            return False
         if root.value == value:
             return True
         if value < root.value:
@@ -41,9 +41,10 @@ class BinarySearchTree:
     def inorder_traversal(self, root):
         result = []
         if root:
-            self.inorder_traversal(root.left)
+            result.extend(self.inorder_traversal(root.left))
             result.append(root.value)
-            self.inorder_traversal(root.right)
+            # print(root.value, end = " ")
+            result.extend(self.inorder_traversal(root.right))
         return result
     
     def preorder_traversal(self, root):
@@ -88,11 +89,11 @@ class BinarySearchTree:
 
     
 # Example usage:
-# bst = BinarySearchTree()
-# bst.insert(10)
-# bst.insert(5)
-# bst.insert(15)
-# print(bst.search(bst.root, 10))  # Expected output: True
-# print(bst.inorder_traversal(bst.root))  # Expected output: [5, 10, 15]
-# print(bst.delete(bst.root, 5))
-# print(bst.inorder_traversal(bst.root)) 
+bst = BinarySearchTree()
+bst.insert(10)
+bst.insert(5)
+bst.insert(15)
+print(bst.search(bst.root, 10))  # Expected output: True
+print(bst.inorder_traversal(bst.root))  # Expected output: [5, 10, 15]
+bst.delete(bst.root, 5)
+print(bst.inorder_traversal(bst.root))

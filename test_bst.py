@@ -22,9 +22,9 @@ class TestBinarySearchTree(unittest.TestCase):
         self.bst.insert(10)
         self.bst.insert(5)
         self.bst.insert(15)
-        self.assertTrue(self.bst.search(self.bst.root), 10)
-        self.assertTrue(self.bst.search(self.bst.root), 5)
-        self.assertFalse(self.bst.search(self.bst.root), 20)
+        self.assertTrue(self.bst.search(self.bst.root, 10))
+        self.assertTrue(self.bst.search(self.bst.root, 5))
+        self.assertFalse(self.bst.search(self.bst.root, 20))
 
     def test_preorder_traversal(self):
         """Test pre-order traversal."""

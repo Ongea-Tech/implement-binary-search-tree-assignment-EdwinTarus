@@ -51,16 +51,16 @@ class BinarySearchTree:
         result = []
         if root:
             result.append(root.value)
-            self.preorder_traversal(root.left)
-            self.preorder_traversal(root.right)
+            result.extend(self.preorder_traversal(root.left))
+            result.extend(self.preorder_traversal(root.right))
         return result
     
     def postorder_traversal(self, root):
         """Return a list of values representing post-order traversal."""
         result = []
         if root:
-            self.postorder_traversal(root.left)
-            self.postorder_traversal(root.right)
+            result.extend(self.postorder_traversal(root.left))
+            result.extend(self.postorder_traversal(root.right))
             result.append(root.value)
         return result 
     
